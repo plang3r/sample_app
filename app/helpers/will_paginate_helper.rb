@@ -12,7 +12,7 @@ module WillPaginateHelper
 				attributes[:rel] = rel_value(target)
 				target = url(target)
 			end
-			ajax_call = "user_paginate('#{target}');" 
+			ajax_call = "ajax_paginate('#{target}');" 
 			@template.link_to(text.to_s.html_safe, '#', attributes.merge(:onclick => "#{ajax_call}"))
 		end
 	end

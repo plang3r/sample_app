@@ -1,6 +1,8 @@
 <% if @feed_items.any? %>
-	<ol class="microposts">
+	<%= ajax_will_paginate @feed_items %>
+	<ol class="microposts apaginate_container">
 		<%= render partial: 'shared/feed_item', collection: @feed_items %>
 	</ol>
-	<%= will_paginate @feed_items %>
+	<%= ajax_will_paginate @feed_items %>
 <% end %>
+<%= javascript_include_tag "user_paginate.js" %>

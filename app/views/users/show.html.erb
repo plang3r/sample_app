@@ -11,10 +11,12 @@
 	<div class="span8">
 		<% if @user.microposts.any? %>
 			<h3>Microposts (<%= @user.microposts.count %>)</h3>
-			<ol class="microposts">
+			<%= ajax_will_paginate @microposts %>
+			<ol class="microposts apaginate_container">
 				<%= render @microposts %>
 			</ol>
-			<%= will_paginate @microposts %>
+			<%= ajax_will_paginate @microposts %>
 		<% end %>	
 	</div>
 </div>
+<%= javascript_include_tag "user_paginate.js" %>
